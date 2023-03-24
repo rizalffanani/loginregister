@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +12,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\LoginController@index')->name('login.index');
+Route::get('/register', 'App\Http\Controllers\RegisterController@index')->name('register.index');
+Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home.index');
